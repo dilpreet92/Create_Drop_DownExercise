@@ -1,5 +1,5 @@
-function createDropDown(getElement) {
-  this.listItemElement = getElement;
+function createDropDown(element) {
+  this.listItemElement = element;
 }
 createDropDown.prototype.bindEvents = function() {
   this.listItemElement.hover(function() {
@@ -15,7 +15,6 @@ createDropDown.prototype.bindEvents = function() {
 };
 
 $(document).ready(function() {
-  var listItemElement = $("#nav li");
-  var createDropDownObj = new createDropDown(listItemElement);
-  createDropDownObj.bindEvents();
+  var dropDownObj = new createDropDown($("#nav li"));
+  dropDownObj.bindEvents();
 });
